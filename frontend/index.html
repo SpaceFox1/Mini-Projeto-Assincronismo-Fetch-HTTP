@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pt">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Belezas da Paraíba</title>
+    <link href="./index.css" type="text/css" rel="stylesheet">
+    <script defer src="./index.js"></script>
+  </head>
+  <body>
+    <header id="header">
+      <div id="leftside">
+        <h1 class="sectionTitle">Turismo!</h1>
+      </div>
+      <div id="rightside">
+        <button id="addPlace" class="headerbutton" onclick="startCreatingNewPlace()">Adicionar Beleza Paraibana</button>
+      </div>
+    </header>
+    <main id="content">
+      <div id="placeModal" class="modalContainer" onclick="cancelModal()">
+        <div class="modal" onclick="event.stopPropagation()">
+          <h3 class="modalTitle" id="modalTitle">Criar Beleza Paraibana</h3>
+          <div class="form">
+            <div class="horizontal">
+              <div class="input">
+                <label for="placeTitleInput" class="inputLabel">Nome</label>
+                <input id="placeTitleInput" class="inputElement" type="text" placeholder=" ">
+              </div>
+              <div class="input">
+                <label for="placePictureInput" class="inputLabel">Url da Imagem</label>
+                <input id="placePictureInput" class="inputElement" type="url" placeholder=" ">
+              </div>
+            </div>
+            <div class="input">
+              <label for="placeDescriptionInput" class="inputLabel">Descrição</label>
+              <textarea id="placeDescriptionInput" class="inputElement" type="" placeholder=" " rows="5"></textarea>
+            </div>
+            <div class="horizontal">
+              <button class="subtleButton" onclick="cancelModal()">Cancelar</button>
+              <button id="submitModalFormButton" class="modalButton" onclick="modalMainAction()">
+                <div class="spinner"></div>
+                <span id="modalMainActionButtonLabel">Criar</span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <h2 class="sectionTitle">Lista de belezas paraibanas</h2>
+      <div id="places"></div>
+    </main>
+  </body>
+</html>
